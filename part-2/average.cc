@@ -21,19 +21,15 @@ int main(int argc, char* argv[]) {
   // Use a double or float type so that your program preserves fractional
   // values.
   double sum = 0;
-  //for (int i = 1; i < arguments.size(); ++i) {
-  //  sum += std::stod(arguments.at(i));
-  //}
-    int count = 0;
-    for (std::string& something : arguments) {
-      if (count == 0) {
-        count++;
-        
-        continue;
-      }
-      double convert = std::stod(something);
-      sum += convert;
+  int count = 0;
+  for (std::string& something : arguments) {
+    if (count == 0) {
+      count++;
+      continue;
     }
+    double convert = std::stod(something);
+    sum += convert;
+  }
   int converstion = static_cast<int>(arguments.size() - 1);
   double average = sum / converstion;
 
